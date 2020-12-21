@@ -6,6 +6,10 @@ const app = express();
 //Connect Database
 connectDB();
 
+//Init Middleware ''body-parse'
+app.use(express.json({ extended: false }));
+
+//Request to the root
 app.get('/', (req, res) => res.json({ msg: 'Welcome to contact keeper...' }));
 
 //Define Api Routes
